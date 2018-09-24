@@ -1,0 +1,86 @@
+/*alola photo gallery image*/
+.gallery-view-img {
+	display: block;
+	margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	-webkit-transition: all 0.4s;transition: all 0.4s;
+}
+.gallery-view-img:hover{
+	transform: scale(1.02);
+}
+#gallery-view{
+	opacity: 0;
+	-webkit-transition: all 0.4s;transition: all 0.4s;
+	overflow: hidden;
+}
+#gallery-view.active {
+    position: fixed;
+	display: block;
+    top: 0;
+    left: 0;
+    height: 100pc;
+    width: 100%;
+    z-index: 100000000;
+	opacity: 1;
+	overflow: hidden;
+}
+#gallery-view img {
+    z-index: 1;
+    max-width: 100% !important;
+    max-height: 80% !important;
+	margin: 10% auto;
+	position: relative;
+    display: block;
+	-webkit-transform: scale(0);transform: scale(0);
+	-webkit-transition: all 2s linear 1s;transition: all 2s linear 1s;
+}
+#gallery-view.active img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.5);box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+#gallery-view .gallery-view-close {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	-webkit-transition: all 1s linear 0.5s;transition: all 1s linear 0.5s;
+	-webkit-transform: scale(0);transform: scale(0);
+	text-align: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    line-height: 35px;
+}
+#gallery-view.active .gallery-view-close {
+	-webkit-transform: scale(1);transform: scale(1);
+}
+#gallery-view:before {
+    content: "";
+    display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 144, 129, 0.8);
+	border-radius: 50%;
+	-webkit-transform: scale(0);transform: scale(0);
+	-webkit-transition: all 0.8s;transition: all 0.8s;
+}
+.gallery-view-img img {
+    width: 100%;
+    height: 150px;
+}
+#gallery-view.active:before {
+	-webkit-transform: scale(3);transform: scale(3);
+}
